@@ -1,0 +1,11 @@
+Package: palen1x-tui
+Architecture: all
+Version: 1.0.9
+Priority: optional
+Section: Utilities
+Maintainer: Hephaestus Team <me@ironside.org.uk>
+Depends: usbmuxd
+Homepage: https://repo.ironside.org.uk/
+Description: palen1x terminal user interface adapted for usage on regular Linux distributions.
+Name: palen1x TUI
+Author: Genesis <me@ironside.org.uk>

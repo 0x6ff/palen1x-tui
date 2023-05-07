@@ -1,0 +1,6 @@
+#!/usr/bin/env
+
+sudo rm $(cat /opt/hephaestus/paleloc)
+sudo rm /opt/hephaestus/paleloc
+sudo rm $(cat /opt/hephaestus/tuiloc)
+sudo rm /opt/hephaestus/tuiloc

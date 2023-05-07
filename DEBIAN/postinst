@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# chmod palen1x tui scripts
+chmod +x -R /opt/hephaestus/*
+
+# curl correct binary depending on kernal
+if [[ $(uname) == "Linux" ]]; then
+  sudo curl -L -k https://github.com/palera1n/palera1n/releases/download/v2.0.0-beta.6.2/palera1n-linux-$(uname -m) -o /usr/bin/palera1n
+  PALE_LOC=/usr/bin/palera1n
+  sudo mv /var/tui /usr/bin/tui
+  TUI_LOC=/usr/bin/tui
+elif [[ $(uname) == "Darwin" ]]; then
+  sudo curl -L -k https://github.com/palera1n/palera1n/releases/download/v2.0.0-beta.6.2/palera1n-macos-universal -o /usr/local/bin/palera1n
+  PALE_LOC=/usr/local/bin/palera1n
+  sudo mv /var/tui /usr/local/bin/tui
+  TUI_LOC=/usr/local/bin/tui
+else
+  echo 'Unknown operating system detected. Exiting..'
+  exit 1
+fi
+
+chmod +x $PALE_LOC
+
+echo $PALE_LOC > /opt/hephaestus/paleloc
+echo $TUI_LOC > /opt/hephaestus/tuiloc
