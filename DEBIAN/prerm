@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/env bash
 
 sudo rm $(cat /opt/hephaestus/paleloc)
 sudo rm /opt/hephaestus/paleloc
